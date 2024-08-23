@@ -39,7 +39,7 @@
             window.currentTxState = 'none'
             window.TON_SDK = { name: "ton_sdk" }
             const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-                manifestUrl: "",
+                manifestUrl: "https://tcdn.myturn-games.com/PickAxe/tonconnect-manifest.json",
             });
 
             const walletsList = await tonConnectUI.connector.getWallets();
