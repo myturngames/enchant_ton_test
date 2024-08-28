@@ -78,12 +78,15 @@
                 const currentWalletInfo = tonConnectUI.walletInfo;
                 const currentAccount = tonConnectUI.account;
                 const currentIsConnectedStatus = tonConnectUI.connected;
-                return {
+
+                var walletJson = JSON.stringify({
                     currentWallet: currentWallet,
                     currentWalletInfo: currentWalletInfo,
                     currentAccount: currentAccount,
                     currentIsConnectedStatus: currentIsConnectedStatus
-                }
+                });
+
+                return walletJson;
             }
 
             var container = document.querySelector("#unity-container");
