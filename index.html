@@ -60,7 +60,6 @@
             window.TON_SDK.connectWallet = async function connectWallet() {
                 try {
                     let result = await tonConnectUI.openModal().then((data) => { console.log(data) });
-                    console.log(result);
                 } catch (error) {
                     return error;
                 }
