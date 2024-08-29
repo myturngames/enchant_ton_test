@@ -80,21 +80,8 @@
                     currentIsConnectedStatus: currentIsConnectedStatus
                 });
 
-                console.log(walletJson);
                 return walletJson;
             }
-
-            window.addEventListener('ton-connect-ui-connection-completed', (event) => {
-                window.unityInstanceRef.SendMessage("TelegramMiniApp", "ConnectWalletSuccess");
-            });
-
-            window.addEventListener('ton-connect-ui-connection-restoring-completed', (event) => {
-                window.unityInstanceRef.SendMessage("TelegramMiniApp", "ConnectWalletSuccess");
-            });
-
-            window.addEventListener('ton-connect-ui-disconnection', (event) => {
-                window.unityInstanceRef.SendMessage("TelegramMiniApp", "DisconnectWalletSuccess");
-            });
 
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
