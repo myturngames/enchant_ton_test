@@ -59,17 +59,15 @@
             // Connect wallet
             window.TON_SDK.connectWallet = async function connectWallet() {
                 try {
-                    let result = await tonConnectUI.openModal().then((data) => { console.log(data) });
+                    await tonConnectUI.openModal().then((data) => { console.log(data) });
                 } catch (error) {
                     return error;
                 }
             }
 
             window.TON_SDK.disconnectWallet = async function disconnectWallet() {
-                let result = await tonConnectUI.disconnect();
-                console.log(result);
+                await tonConnectUI.disconnect();
                 setTimeout(() => {
-                    console.log(result);
                 }, 500)
             }
 
@@ -86,6 +84,10 @@
             }
 
             window.addEventListener('ton-connect-ui-connection-completed', (event) => {
+                window.unityInstanceRef.SendMessage("TelegramMiniApp", "ConnectWalletSuccess");
+            });
+
+            window.addEventListener('ton-connect-ui-connection-restoring-completed', (event) => {
                 window.unityInstanceRef.SendMessage("TelegramMiniApp", "ConnectWalletSuccess");
             });
 
