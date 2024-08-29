@@ -72,15 +72,16 @@
             }
 
             window.TON_SDK.getWalletInfo = function getWalletInfo() {
-                const currentAddress = tonConnectUI.account.address;
-                const currentIsConnectedStatus = tonConnectUI.connected;
+                const currentAccount = tonConnectUI.account;
+				const currentIsConnectedStatus = tonConnectUI.connected;
 
-                var walletJson = JSON.stringify({
-                    currentAddress: currentAddress,
-                    currentIsConnectedStatus: currentIsConnectedStatus
-                });
+				var walletJson = JSON.stringify({
+					currentAccount: currentAccount,
+					currentIsConnectedStatus: currentIsConnectedStatus
+				});
 
-                return walletJson;
+				console.log(walletJson);
+				return walletJson;
             }
 
             window.addEventListener('ton-connect-ui-connection-completed', (event) => {
